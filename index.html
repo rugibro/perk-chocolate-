@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>How Perk Chocolate is Made 🍫</title>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      scroll-behavior: smooth;
+      background: #111;
+      color: white;
+    }
+
+    /* ---------- HERO ---------- */
+    .hero {
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(135deg,#3b1d0f,#000);
+      font-size: 60px;
+      font-weight: bold;
+      text-align: center;
+    }
+
+    /* ---------- SECTIONS ---------- */
+    .section {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      padding: 40px;
+      gap: 40px;
+      opacity: 0;
+      transform: translateY(60px);
+      transition: 1s;
+    }
+
+    .section.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .section img {
+      width: 400px;
+      max-width: 90%;
+      border-radius: 20px;
+      box-shadow: 0 0 30px rgba(0,0,0,0.6);
+    }
+
+    .text {
+      max-width: 400px;
+      font-size: 26px;
+      line-height: 1.6;
+    }
+
+    /* alternate layout */
+    .reverse {
+      flex-direction: row-reverse;
+    }
+
+    /* final section */
+    .final {
+      text-align: center;
+      font-size: 50px;
+      background: linear-gradient(135deg,#4a2c00,#000);
+    }
+  </style>
+</head>
+
+<body>
+
+<!-- HERO -->
+<div class="hero">
+  🍫 How Perk Chocolate is Made
+</div>
+
+<!-- STEP 1 -->
+<div class="section">
+  <img src="images/cocoa.jpg">
+  <div class="text">
+    🌱 Step 1<br><br>
+    Fresh cocoa beans are picked from farms.
+  </div>
+</div>
+
+<!-- STEP 2 -->
+<div class="section reverse">
+  <img src="images/roasting.jpg">
+  <div class="text">
+    🔥 Step 2<br><br>
+    Beans are roasted to develop rich chocolate flavor.
+  </div>
+</div>
+
+<!-- STEP 3 -->
+<div class="section">
+  <img src="images/grinding.jpg">
+  <div class="text">
+    ⚙️ Step 3<br><br>
+    Roasted beans are ground into smooth cocoa paste.
+  </div>
+</div>
+
+<!-- STEP 4 -->
+<div class="section reverse">
+  <img src="images/sugar.jpg">
+  <div class="text">
+    🍬 Step 4<br><br>
+    Sugar is added and mixed to create sweet chocolate.
+  </div>
+</div>
+
+<!-- STEP 5 -->
+<div class="section">
+  <img src="images/wafer.jpg">
+  <div class="text">
+    🧇 Step 5<br><br>
+    Chocolate is layered onto crispy wafers.
+  </div>
+</div>
+
+<!-- FINAL -->
+<div class="section final">
+  <div>
+    ✨ Perk Chocolate is Ready! 🍫❤️<br><br>
+    Enjoy!
+  </div>
+</div>
+
+
+<script>
+/* scroll animation */
+const sections = document.querySelectorAll(".section");
+
+window.addEventListener("scroll", () => {
+  sections.forEach(sec => {
+    const pos = sec.getBoundingClientRect().top;
+    if(pos < window.innerHeight - 100){
+      sec.classList.add("show");
+    }
+  });
+});
+</script>
+
+</body>
+</html>
